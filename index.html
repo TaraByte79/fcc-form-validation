@@ -12,52 +12,129 @@
     <title>Form Validation</title>
   </head>
   <body>
+    <div class="heading">
+      <h1 id="title">Survey Form</h1>
+      <p id="description">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
+        perferendis voluptatibus! Consectetur, incidunt. Dolorem provident ipsa
+        fugiat consequuntur officiis iure?
+      </p>
+    </div>
+
     <div class="container">
-      <form action="" id="form">
-        <div class="title"></div>
+      <form action="" id="survey-form">
         <!-- Username Input -->
         <div>
-          <label for="username">Username</label>
-          <i class="fas fa-user"></i>
+          <label for="name" id="name-label">Name</label>
+
           <input
             type="text"
-            name="username"
-            id="username"
-            placeholder="Username"
+            name="name"
+            id="name"
+            placeholder="Name"
+            required
           />
           <i class="fas fa-exclamation-circle failure-icon"></i>
           <i class="far fa-check-circle success-icon"></i>
           <div class="error"></div>
         </div>
+
         <!-- Email Input -->
         <div>
-          <label for="email">Email</label>
-          <i class="far fa-envelope"></i>
-          <input type="text" name="email" id="email" placeholder="Email" />
-
-          <i class="fas fa-exclamation-circle failure-icon"></i>
-          <i class="far fa-check-circle success-icon"></i>
-
-          <div class="error"></div>
-        </div>
-        <!-- Password Input -->
-        <div>
-          <label for="password">Password</label>
-          <i class="fas fa-lock"></i>
+          <label for="email" id="email-label">Email</label>
 
           <input
-            type="password"
-            name="password"
-            id="password"
-            placeholder="Password"
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email"
+            required
           />
+
           <i class="fas fa-exclamation-circle failure-icon"></i>
           <i class="far fa-check-circle success-icon"></i>
 
           <div class="error"></div>
         </div>
 
-        <button id="btn" type="submit">Submit</button>
+        <!-- Age Input -->
+        <div>
+          <label for="number" id="number-label">Age (Optional)</label>
+
+          <input
+            type="number"
+            name="number"
+            id="number"
+            placeholder="Age"
+            min="18"
+            max="999"
+          />
+
+          <i class="fas fa-exclamation-circle failure-icon"></i>
+          <i class="far fa-check-circle success-icon"></i>
+
+          <div class="error"></div>
+        </div>
+
+        <!-- Rating -->
+        <label for="dropdown">Choose Overall Rating:</label>
+
+        <select name="dropdown" id="dropdown">
+          <option name="rating" value="excellent">Excellent</option>
+          <option name="rating" value="good">Good</option>
+          <option name="rating" value="okay">Just OK</option>
+          <option name="rating" value="bad" disabled>
+            Definately needs improvement
+          </option>
+        </select>
+
+        <fieldset>
+          <p>Would you refer me?</p>
+          <input
+            type="radio"
+            name="radio"
+            id="radio"
+            placeholder=""
+            value="yes"
+          />yes
+          <input
+            type="radio"
+            name="radio"
+            id="radio"
+            placeholder=""
+            value="no"
+          />no
+        </fieldset>
+
+        <p>Would you like additional information?</p>
+        <input
+          type="checkbox"
+          name="checkbox"
+          id="checkbox"
+          placeholder=""
+          value="Sign up"
+        />yes
+
+        <input
+          type="checkbox"
+          name="checkbox"
+          id="checkbox"
+          placeholder=""
+          value="email"
+        />no
+
+        <label for="w3review">Contact Us!</label>
+
+        <textarea
+          id="contact"
+          name="contact"
+          rows="4"
+          cols="50"
+          placeholder="Message..."
+        >
+        </textarea>
+
+        <button id="submit" type="submit">Submit</button>
       </form>
     </div>
     <script src="script.js"></script>
